@@ -41,10 +41,7 @@ def requestData(matchId, SERVER, API_KEY):
     return jsonDict
 
 def getAndStoreData(matchDataDict):
-    '''
-    Opens database, update information, and close connection. Tables are pre-made already with necessary columns
-    Layout of my table:"|  id  |  name  |  title  |  picked  |  won  |  banned  |  warded  |"
-    '''
+    '''Opens database, update information, and close connection. Tables are pre-made already with necessary columns'''
     #Finding out champion pick rate, win rate and ward rate
     for index in range (0, 10): #Because I know for a fact there are 10 players in a game
         champId = getMethods.getChampionId(matchDataDict, index) #gets championId from dictionary
@@ -60,7 +57,7 @@ def getAndStoreData(matchDataDict):
 
 def main():
     #Open the file with all the match IDs
-    jsonFile = open('NA.json','r') #Make sure you have the json file with all the matchId in the same folder as this script
+    jsonFile = open('/home/sc4251/Desktop/Random Projects/Riot API 2.0/bilgewater-data/NA.json','r')
     #Take all the content out of the file
     jsonContent = jsonFile.read()
     #Get all the matchId and put it in a list
@@ -69,4 +66,5 @@ def main():
         matchDataDict = requestData(matchId, SERVER, API_KEY)
         getAndStoreData(matchDataDict)
     jsonFile.close()
+
 main()

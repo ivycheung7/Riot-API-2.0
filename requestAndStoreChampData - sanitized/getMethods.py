@@ -18,16 +18,16 @@ def getWinnerPlayer(matchDataDict, index):
 
 def getBannedChampId(matchDataDict, index):
     '''Return a list of banned champion Id made by team 1 or team 2, depending on index'''
-    logging.basicConfig(filename='exceptions.log', level=logging.DEBUG) #Made a log file for all the exceptions
+    logging.basicConfig(filename='na_exceptions.log', level=logging.DEBUG) #Made a log file for all the exceptions
     bannedChampList = [] #To put champ Ids in and return it
     try:
         teamBansList =  matchDataDict['teams'][index]['bans'] #Returns a list of 3 dictionaries, each with pick turn and banned champ
         if len(teamBansList) < 3: #Logging to see if some teams only have 1 or 2 bans
-            logging.debug('This ban list is the len of '+ len(teamBansList) + ', teamId = ' +matchDataDict['matchId'])
+            logging.debug('This ban list is the len of '+ str(len(teamBansList)) + ', teamId = ' +matchDataDict['matchId']) #Logging to see who forgot to ban and make sure ban counts are right
         for bans in teamBansList:
             bannedChampList.append(bans['championId']) #Adds the champion Id to the ban list
     except Exception, e: #Throws exceptions, log them, and then debug them later
         logging.info(matchDataDict['matchId'])
-        logging.warning('teamId ' + matchDataDict['teamId'] + 'does not have a ban section')
+        logging.warning('teamId ' + str(matchDataDict['teams'][index]['teamId']) + 'does not have a ban section')
         logging.exception(e)
     return bannedChampList
