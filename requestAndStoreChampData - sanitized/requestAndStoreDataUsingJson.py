@@ -57,7 +57,7 @@ def getAndStoreData(matchDataDict):
 
 def main():
     #Open the file with all the match IDs
-    jsonFile = open('/home/sc4251/Desktop/Random Projects/Riot API 2.0/bilgewater-data/NA.json','r')
+    jsonFile = open(jsonFilePath)
     #Take all the content out of the file
     jsonContent = jsonFile.read()
     #Get all the matchId and put it in a list
