@@ -1,0 +1,58 @@
+*{
+    font-family:'Open Sans',sans-serif;
+}
+#teemos{
+    display:inline;
+}
+#theShroom{
+    width:100px;
+    height:100px;
+}
+
+#teemo{
+    display:inline;
+    width:125px;
+    height:80px;
+    margin:auto;
+}
+#header{
+    display:inline-block;
+}
+body{
+    /*background-image:url("teemo.jpg");*/
+    background-size: cover;
+    overflow:scroll;
+    background-color:white;
+    display:inline;
+}
+.jumbotron{
+ 
+    /*opacity:0.4;
+    filter:alpha(opacity=40);*/
+ 
+    color:white;
+    background-color:black;
+    border-color: black;
+    border-style: outset;
+    opacity: 0.8;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+#categories{
+    margin:15%;
+    display:inline;
+    height:100%;
+    width:100%;
+    color:gray;
+}
+#champPortraits{
+    width:80px;
+    height:80px;
+}
+#serverDiv{
+    color:orange;
+    font-weight:900;
+}
+#tierImages{
+    width:40px;
+    height:40px;
+}

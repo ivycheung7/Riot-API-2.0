@@ -1,0 +1,100 @@
+<!--Levels of Separation-->
+<!--Server->Champions->Tier Level->-->
+<!--If only one is picked, e.g. Malzahar, then show all servers/tier levels-->
+<!--Win Rate/Pick Rate/Ban Rate/Item Rate(Top 6)/Ward Rate/K.D.A./TBA Coins Earned-->
+<!--Front-end, by Ivy Cheung-->
+<!--Back-end, by Shuyu Chen-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Black Market Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="bm.css" rel="stylesheet" media="screen">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300effect=shadow-multiple' rel='stylesheet' type='text/css'>
+    <style>
+    </style>
+  </head>
+ <body>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="bm.js"></script>
+    <div class="container">
+      <div class="jumbotron">
+        <div id = "header" >
+            <h1>Black Market Project
+            </h1>
+        </div>
+        <p>Enter project mission or how to use website</p>
+ 
+ 
+ <!--Drop-down menus to select-->
+    <div id ="categories">
+       <select id = "server">
+        <option value = "0">Servers</option>
+        <option value = "1">NA</option>
+        <option value = "2">BR</option>
+        <option value = "3">EUNE</option>
+        <option value = "4">EUW</option>
+        <option value = "5">LAN</option>
+        <option value = "6">LAS</option>
+        <option value = "7">OCE</option>
+        <option value = "8">RU</option>
+        <option value = "9">TR</option>
+        <option value = "10">KR</option>
+        
+      </select>
+      <select id ="tier">
+          <option value="0">Tier Level</option>
+          <option value="1">Challenger</option>
+          <option value="2">Master</option>
+          <option value="3">Diamond</option>
+          <option value="4">Platinum</option>
+          <option value="5">Gold</option>
+          <option value="6">Silver</option>
+          <option value="7">Bronze</option>
+          <option value="8">Unranked</option>
+      </select>
+      
+      <select id = "champion">
+        <option value = "0">Champions</option>
+        <option value = "35">Shaco</option>
+        <option value = "34">Anivia</option>
+        <option value = "1">Annie</option>
+      </select>
+      
+      <button type ="submit" onclick="findData();">Lock In</button>
+    </div> 
+    </div>
+</div>
+
+
+<!--Is not a trap-->
+<div class = "container">
+    <div id = "leMusic"></div>
+    <div id = "teemos">
+        <p>
+            <img id = "teemo" src="teemo_point.jpg" alt="Teemo Pointing">
+            <img id = "teemo" src="teemo_point.jpg" alt="Teemo Pointing">
+            <img id = "teemo" src="teemo_point.jpg" alt="Teemo Pointing">
+            <img id = "teemo" src="teemo_point.jpg" alt="Teemo Pointing">
+            <img id = "teemo" src="teemo_point.jpg" alt="Teemo Pointing">
+         </p>
+    </div>
+    <div id = "leShroom" onclick=playSurprise()></div>    
+</div>
+
+<!--Data will be featured here-->
+<div class="container">
+    <div class="jumbotron">
+        <div id = "data" >
+            <div id="dataDiv">
+            </div>
+        </div>
+    </div>
+</div>
+    
+</body>
